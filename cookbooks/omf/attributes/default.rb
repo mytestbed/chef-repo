@@ -9,7 +9,7 @@ default['omf']['uid'] =
     Socket.gethostname
   end
 
-default['omf']['oml_collect_uri'] = "tcp:srv.mytestbed.net:3004"
+default['omf']['oml_collect_uri'] = ENV["OML_COLLECT_URI"] && !ENV["OML_COLLECT_URI"].empty? ? ENV["OML_COLLECT_URI"] : "tcp:srv.mytestbed.net:3004"
 
 default['omf']['edges'] =
   begin
